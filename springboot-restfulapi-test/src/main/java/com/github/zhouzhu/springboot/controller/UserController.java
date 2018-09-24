@@ -5,10 +5,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
+/**
+ * @author zhouzhu
+ */
+
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
-    //创建线程安全的map
+    /**
+     * 创建线程安全的map
+     */
     static Map<Long,User> users= Collections.synchronizedMap(new HashMap<Long,User>());
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
