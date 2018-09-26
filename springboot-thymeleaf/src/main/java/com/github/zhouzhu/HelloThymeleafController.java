@@ -17,4 +17,14 @@ public class HelloThymeleafController {
         modelMap.addAttribute("host","www.baidu.com");
         return "index";
     }
+
+    @RequestMapping("/hello")
+    public String hello() throws Exception{
+        throw new Exception("发生错误");
+    }
+
+    @RequestMapping("/json")
+    public String json()throws MyException{
+        throw new MyException("发生错误2");
+    }
 }
